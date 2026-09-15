@@ -1,136 +1,90 @@
 @model fornquanlysinhvien.Models.Student
 
 @{
-    ViewData["Title"] = "Thêm sinh viên mới";
+    ViewData["Title"] = "Create";
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <h1>@ViewData["Title"]</h1>
-            <hr />
+<h1>Create</h1>
 
-            <form asp-action="Create" method="post" class="mt-4">
-                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <!-- Thông tin tài khoản -->
-                <div class="card mb-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Thông tin tài khoản</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="Username" class="form-label"></label>
-                                    <input asp-for="Username" class="form-control" />
-                                    <span asp-validation-for="Username" class="text-danger small"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="PasswordHash" class="form-label"></label>
-                                    <input asp-for="PasswordHash" class="form-control" type="password" />
-                                    <span asp-validation-for="PasswordHash" class="text-danger small"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
 
-                <!-- Thông tin cá nhân -->
-                <div class="card mb-4">
-                    <div class="card-header bg-secondary text-white">
-                        <h5 class="mb-0">Thông tin cá nhân</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="FirstName" class="form-label"></label>
-                                    <input asp-for="FirstName" class="form-control" />
-                                    <span asp-validation-for="FirstName" class="text-danger small"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="LastName" class="form-label"></label>
-                                    <input asp-for="LastName" class="form-control" />
-                                    <span asp-validation-for="LastName" class="text-danger small"></span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="form-group">
+                <label asp-for="PasswordHash" class="control-label"></label>
+                <input asp-for="PasswordHash" class="form-control" />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="Email" class="form-label"></label>
-                                    <input asp-for="Email" class="form-control" type="email" />
-                                    <span asp-validation-for="Email" class="text-danger small"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="PhoneNumber" class="form-label"></label>
-                                    <input asp-for="PhoneNumber" class="form-control" type="tel" />
-                                    <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
 
-                <!-- Thông tin học tập -->
-                <div class="card mb-4">
-                    <div class="card-header bg-success text-white">
-                        <h5 class="mb-0">Thông tin học tập</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="StudentId" class="form-label"></label>
-                                    <input asp-for="StudentId" class="form-control" placeholder="VD: SV2024001" />
-                                    <span asp-validation-for="StudentId" class="text-danger small"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label asp-for="ClassName" class="form-label"></label>
-                                    <input asp-for="ClassName" class="form-control" placeholder="VD: 12A1" />
-                                    <span asp-validation-for="ClassName" class="text-danger small"></span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label asp-for="Major" class="form-label"></label>
-                                    <input asp-for="Major" class="form-control" placeholder="VD: Công nghệ thông tin" />
-                                    <span asp-validation-for="Major" class="text-danger small"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label asp-for="StudentId" class="control-label"></label>
+                <input asp-for="StudentId" class="form-control" />
+                <span asp-validation-for="StudentId" class="text-danger"></span>
+            </div>
 
-                <!-- Nút hành động -->
-                <div class="mb-4">
-                    <button type="submit" class="btn btn-primary btn-lg">
-                        <i class="bi bi-check-circle"></i> Thêm sinh viên
-                    </button>
-                    <a asp-action="Index" class="btn btn-secondary btn-lg">
-                        <i class="bi bi-x-circle"></i> Hủy
-                    </a>
-                </div>
-            </form>
-        </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ClassName" class="control-label"></label>
+                <input asp-for="ClassName" class="form-control" />
+                <span asp-validation-for="ClassName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Major" class="control-label"></label>
+                <input asp-for="Major" class="form-control" />
+                <span asp-validation-for="Major" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UpdatedAt" class="control-label"></label>
+                <input asp-for="UpdatedAt" class="form-control" />
+                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

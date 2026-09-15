@@ -1,111 +1,37 @@
 using Microsoft.AspNetCore.Mvc;
 using fornquanlysinhvien.Models;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace fornquanlysinhvien.Controllers;
-
-public class StudentController : Controller
+namespace fornquanlysinhvien.Controllers
 {
-    // In-memory storage (replace with database in production)
-    private static List<Student> _students = new();
-
-    public IActionResult Index()
+    public class StudentController : Controller
     {
-        return View(_students.ToList());
-    }
+        // Danh sách lưu tạm sinh viên trong bộ nhớ
+        private static List<Student> _studentList = new List<Student>();
 
-    public IActionResult Details(Guid id)
-    {
-        var student = _students.FirstOrDefault(s => s.Id == id);
-        if (student == null)
+        // 1. Hiển thị danh sách sinh viên
+        public IActionResult Index()
         {
-            return NotFound();
-        }
-        return View(student);
-    }
-
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult Create(Student student)
-    {
-        if (ModelState.IsValid)
-        {
-            student.Id = Guid.NewGuid();
-            student.CreatedAt = DateTime.UtcNow;
-            student.UpdatedAt = DateTime.UtcNow;
-            _students.Add(student);
-            return RedirectToAction(nameof(Index));
-        }
-        return View(student);
-    }
-
-    public IActionResult Edit(Guid id)
-    {
-        var student = _students.FirstOrDefault(s => s.Id == id);
-        if (student == null)
-        {
-            return NotFound();
-        }
-        return View(student);
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult Edit(Guid id, Student student)
-    {
-        if (id != student.Id)
-        {
-            return BadRequest();
+            return View(_studentList);
         }
 
-        if (ModelState.IsValid)
+        // 2. Trang hiển thị Form nhập thông tin (GET)
+        [HttpGet]
+        public IActionResult Create()
         {
-            var existingStudent = _students.FirstOrDefault(s => s.Id == id);
-            if (existingStudent == null)
+            return View();
+        }
+
+        // 3. Xử lý khi bấm nút "Lưu" trên Form (POST)
+        [HttpPost]
+        public IActionResult Create(Student student)
+        {
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                student.Id = Guid.NewGuid(); // Tự động tạo ID mới
+                _studentList.Add(student);   // Lưu vào danh sách
+                return RedirectToAction("Index"); // Chuyển về trang danh sách
             }
-
-            existingStudent.Username = student.Username;
-            existingStudent.FirstName = student.FirstName;
-            existingStudent.LastName = student.LastName;
-            existingStudent.Email = student.Email;
-            existingStudent.PhoneNumber = student.PhoneNumber;
-            existingStudent.StudentId = student.StudentId;
-            existingStudent.ClassName = student.ClassName;
-            existingStudent.Major = student.Major;
-            existingStudent.UpdatedAt = DateTime.UtcNow;
-
-            return RedirectToAction(nameof(Index));
+            return View(student); // Nếu có lỗi nhập liệu thì ở lại trang form
         }
-        return View(student);
-    }
-
-    public IActionResult Delete(Guid id)
-    {
-        var student = _students.FirstOrDefault(s => s.Id == id);
-        if (student == null)
-        {
-            return NotFound();
-        }
-        return View(student);
-    }
-
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public IActionResult DeleteConfirmed(Guid id)
-    {
-        var student = _students.FirstOrDefault(s => s.Id == id);
-        if (student != null)
-        {
-            _students.Remove(student);
-        }
-        return RedirectToAction(nameof(Index));
     }
 }

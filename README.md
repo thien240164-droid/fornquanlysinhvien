@@ -47,7 +47,7 @@ fornquanlysinhvien/
 
 ### Yêu cầu
 - .NET 10 SDK
-- Visual Studio Community 2026 hoặc cao hơn
+- Visual Studio Insiders 2026 hoặc cao hơn
 - Git
 
 ### Bước 1: Clone repository
