@@ -1,0 +1,78 @@
+@model fornquanlysinhvien.Models.Student
+
+@{
+    ViewData["Title"] = "Xác nhận xóa sinh viên";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-danger">@ViewData["Title"]</h1>
+            <hr />
+
+            <div class="alert alert-warning" role="alert">
+                <strong>⚠️ Cảnh báo:</strong> Bạn sắp xóa sinh viên này khỏi hệ thống. Hành động này không thể hoàn tác!
+            </div>
+
+            <!-- Thông tin sinh viên sẽ bị xóa -->
+            <div class="card mb-4">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0">Thông tin sinh viên</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Mã sinh viên</label>
+                                <p class="form-control-plaintext">@Model.StudentId</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Tên người dùng</label>
+                                <p class="form-control-plaintext">@Model.Username</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">Tên đầy đủ</label>
+                                <p class="form-control-plaintext">@Model.FirstName @Model.LastName</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <p class="form-control-plaintext">@Model.Email</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Lớp</label>
+                                <p class="form-control-plaintext">@Model.ClassName</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút hành động -->
+            <div class="mb-4">
+                <form asp-action="Delete" method="post" style="display: inline;">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        <i class="bi bi-check-circle"></i> Xác nhận xóa
+                    </button>
+                </form>
+                <a asp-action="Index" class="btn btn-secondary btn-lg">
+                    <i class="bi bi-x-circle"></i> Hủy
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
