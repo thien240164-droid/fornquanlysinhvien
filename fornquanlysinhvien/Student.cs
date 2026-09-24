@@ -1,28 +1,55 @@
-﻿namespace fornquanlysinhvien
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using TBDUni.CorePlatform.Domain.Entities.Identity;
+using TBDUni.CorePlatform.Domain.Common.Entities;
+
+namespace TBDUni.CorePlatform.Domain.Entities.StudentManagement;
+
+public class Student : AggregateRoot<Guid>
 {
-    public class User
-    {
-        public Guid Id { get; private set; } = default!;
-        public string Username { get; private set; } = default!;
-        public string PasswordHash { get; private set; } = default!;
-        public string? FirstName { get; private set; }
-        public string? LastName { get; private set; }
+    // Thông tin sinh viên
+    public string StudentCode { get; private set; } = default!;
+    public string FullName { get; private set; } = default!;
+    public DateTime DateOfBirth { get; private set; }
+    public string? Gender { get; private set; }
+    public Guid? UserId { get; private set; }
 
-        // Constructor để tạo dữ liệu mới
-        public User(string username, string passwordHash, string? firstName = null, string? lastName = null)
-        {
-            Id = Guid.NewGuid();
-            Username = username;
-            PasswordHash = passwordHash;
-            FirstName = firstName;
-            LastName = lastName;
-        }
+    // Thông tin cá nhân
+    public string? PlaceOfBirth { get; private set; }
+    public string? Hometown { get; private set; }
+    public string? Nationality { get; private set; }
+    public string? Ethnicity { get; private set; }
+    public string? Religion { get; private set; }
 
-        // Cập nhật tên
-        public void UpdateName(string? firstName, string? lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
-    }
+    // Thông tin đoàn thể
+    public string? PlaceOfOrigin { get; private set; }
+    public DateTime? UnionJoinDate { get; private set; }
+    public DateTime? PartyJoinDate { get; private set; }
+
+    // Địa chỉ thường trú
+    public string? PermanentAddress { get; private set; }
+    public string? Ward { get; private set; }
+    public string? District { get; private set; }
+    public string? Province { get; private set; }
+
+    // Chính sách
+    public string? PolicyBeneficiary { get; private set; }
+    public string? AllowanceBeneficiary { get; private set; }
+    public string? TargetGroup { get; private set; }
+
+    // Liên hệ
+    public string? HomePhoneNumber { get; private set; }
+    public string? MobilePhoneNumber { get; private set; }
+    public string? Email { get; private set; }
+
+    // Giấy tờ
+    public string? IdentityNumber { get; private set; }
+
+    // Địa chỉ liên hệ
+    public string? MailingAddress { get; private set; }
+    public string? CurrentAddress { get; private set; }
+
+    //Navigation Properties
+    public User? User { get; private set; }
 }
