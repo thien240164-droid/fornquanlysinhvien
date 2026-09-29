@@ -1,9 +1,8 @@
 using VTBDU.CorePlatform.Domain.Common.Constants;
-using VTBDU.CorePlatform.Domain.Common.Entities;
 using VTBDU.CorePlatform.Domain.Common.Enums;
 using VTBDU.CorePlatform.Domain.Common.Events;
 
-namespace VTBDU.CorePlatform.Domain.Entities.Identity;
+namespace VTBDU.CorePlatform.Domain.Entities;
 
 /// <summary>
 /// User aggregate root

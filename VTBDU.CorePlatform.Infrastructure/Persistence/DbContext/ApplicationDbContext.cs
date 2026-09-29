@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Linq.Expressions;
 using VTBDU.CorePlatform.Domain.Common.Events;
-using VTBDU.CorePlatform.Domain.Entities.Identity;
+using VTBDU.CorePlatform.Domain.Entities;
 
 namespace VTBDU.CorePlatform.Infrastructure.Persistence.DbContext;
 

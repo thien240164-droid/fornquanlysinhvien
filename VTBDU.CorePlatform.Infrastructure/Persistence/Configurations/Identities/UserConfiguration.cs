@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using VTBDU.CorePlatform.Domain.Entities.Identity;
+using VTBDU.CorePlatform.Domain.Entities;
 
 namespace VTBDU.CorePlatform.Infrastructure.Persistence.Configurations.Identities;
 

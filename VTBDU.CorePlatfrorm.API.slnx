@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="VTBDU.CorePlatform.Domain/VTBDU.CorePlatform.Domain.csproj" />
+  <Project Path="VTBDU.CorePlatform.Infrastructure/VTBDU.CorePlatform.Infrastructure.csproj" />
   <Project Path="VTBDU.CorePlatfrorm.API/VTBDU.CorePlatfrorm.API.csproj" />
 </Solution>

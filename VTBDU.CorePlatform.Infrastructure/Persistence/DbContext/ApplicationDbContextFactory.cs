@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using VTBDU.CorePlatform.Infrastructure.Persistence.DbContext;
 
-namespace VTBDU.CorePlatform.Infrastructure.Persistence.Configurations;
+namespace VTBDU.CorePlatform.Infrastructure.Persistence.DbContext;
 
 /// <summary>
 /// Design-time factory for EF Core migrations
@@ -33,7 +32,7 @@ public sealed class ApplicationDbContextFactory
         return new ApplicationDbContext(optionsBuilder.Options, currentTenant);
     }
 
-    private sealed class DesignTimeTenant : DbContext.ICurrentTenant
+    private sealed class DesignTimeTenant : ICurrentTenant
     {
         public Guid? TenantId => null;
     }

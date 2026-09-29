@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using VTBDU.CorePlatform.Domain.Entities.StudentManagement;
+using VTBDU.CorePlatform.Domain.Entities;
 
 namespace VTBDU.CorePlatform.Infrastructure.Persistence.Configurations.StudentManagement;
 
 public class StudentConfiguration : IEntityTypeConfiguration<Student>
 {
-    public void Configure(EntityTypeBuilder<Student> builder)
+    public void Configure(EntityTypeBuilder<Domain.Entities.Student> builder)
     {
         // 1. Tên bảng
         builder.ToTable("Students");
