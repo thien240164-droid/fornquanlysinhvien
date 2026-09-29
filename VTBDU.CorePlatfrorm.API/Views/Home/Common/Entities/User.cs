@@ -1,9 +1,9 @@
-using TBDUni.CorePlatform.Domain.Common.Constants;
-using TBDUni.CorePlatform.Domain.Common.Entities;
-using TBDUni.CorePlatform.Domain.Common.Enums;
-using TBDUni.CorePlatform.Domain.Common.Events;
+using VTBDU.CorePlatform.Domain.Common.Constants;
+using VTBDU.CorePlatform.Domain.Common.Entities;
+using VTBDU.CorePlatform.Domain.Common.Enums;
+using VTBDU.CorePlatform.Domain.Common.Events;
 
-namespace TBDUni.CorePlatform.Domain.Entities.Identity;
+namespace VTBDU.CorePlatform.Domain.Entities.Identity;
 
 /// <summary>
 /// User aggregate root

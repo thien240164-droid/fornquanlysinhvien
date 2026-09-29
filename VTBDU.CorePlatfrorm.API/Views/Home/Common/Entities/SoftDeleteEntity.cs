@@ -1,9 +1,9 @@
-﻿using TBDUni.CorePlatform.Domain.Common.Events;
+﻿using VTBDU.CorePlatform.Domain.Common.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TBDUni.CorePlatform.Domain.Common.Entities;
+namespace VTBDU.CorePlatform.Domain.Common.Entities;
 
 public abstract class SoftDeleteEntity<TId> : AuditableEntity<TId>
     where TId : notnull

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TBDUni.CorePlatform.Domain.Common.Entities;
+namespace VTBDU.CorePlatform.Domain.Common.Entities;
 
 public abstract class AuditableEntity<TId> : EventAwareEntity<TId>
         where TId : notnull

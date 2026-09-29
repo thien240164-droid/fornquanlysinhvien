@@ -1,4 +1,4 @@
-namespace TBDUni.CorePlatform.Domain.Common.Enums;
+namespace VTBDU.CorePlatform.Domain.Common.Enums;
 
 /// <summary>
 /// Enum representing the status of a user

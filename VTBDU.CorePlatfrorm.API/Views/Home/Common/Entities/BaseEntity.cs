@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TBDUni.CorePlatform.Domain.Common.Entities;
+namespace VTBDU.CorePlatform.Domain.Common.Entities;
 
 /// <summary>
 /// Base entity class for all domain entities

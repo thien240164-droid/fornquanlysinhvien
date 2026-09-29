@@ -1,6 +1,6 @@
 using System;
 
-namespace TBDUni.CorePlatform.Domain.Common.Events;
+namespace VTBDU.CorePlatform.Domain.Common.Events;
 
 /// <summary>
 /// Base class for all domain events

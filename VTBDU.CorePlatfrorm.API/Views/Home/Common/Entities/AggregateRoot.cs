@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TBDUni.CorePlatform.Domain.Common.Entities;
+namespace VTBDU.CorePlatform.Domain.Common.Entities;
 
 /// <summary>
 /// Aggregate Root – transaction boundary

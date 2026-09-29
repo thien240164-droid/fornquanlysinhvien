@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TBDUni.CorePlatform.Domain.Entities.Identity;
-using TBDUni.CorePlatform.Domain.Common.Entities;
+using VTBDU.CorePlatform.Domain.Entities.Identity;
+using VTBDU.CorePlatform.Domain.Common.Entities;
 
-namespace TBDUni.CorePlatform.Domain.Entities.StudentManagement;
+namespace VTBDU.CorePlatform.Domain.Entities.StudentManagement;
 
 public class Student : AggregateRoot<Guid>
 {

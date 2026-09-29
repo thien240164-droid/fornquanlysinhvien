@@ -1,4 +1,4 @@
-namespace TBDUni.CorePlatform.Domain.Common.Constants;
+namespace VTBDU.CorePlatform.Domain.Common.Constants;
 
 /// <summary>
 /// Constants for user types
