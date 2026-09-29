@@ -44,9 +44,6 @@ packages/
 appsettings.Development.json
 appsettings.*.json
 
-# Entity Framework Core
-Migrations/
-
 # macOS
 .DS_Store
 
