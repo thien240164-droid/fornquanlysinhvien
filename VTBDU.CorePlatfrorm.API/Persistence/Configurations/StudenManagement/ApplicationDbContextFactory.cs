@@ -33,14 +33,10 @@ public sealed class ApplicationDbContextFactory
         return new ApplicationDbContext(optionsBuilder.Options, currentTenant);
     }
 
-    private sealed class DesignTimeTenant : ICurrentTenant
+    private sealed class DesignTimeTenant : DbContext.ICurrentTenant
     {
         public Guid? TenantId => null;
     }
-
-    private interface ICurrentTenant
-    {
-        Guid? TenantId { get; }
-    }
 }
+
 

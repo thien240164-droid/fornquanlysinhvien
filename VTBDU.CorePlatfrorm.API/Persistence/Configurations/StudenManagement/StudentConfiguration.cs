@@ -69,9 +69,9 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.Property(x => x.TargetGroup).HasMaxLength(200);
 
         // 4. Mối quan hệ 1 - 1 với User (Khóa ngoại UserId nằm ở phía Student)
-        builder.HasOne(x => x.User)
-            .WithOne(x => x.Student)
-            .HasForeignKey<Student>(x => x.UserId)
-            .OnDelete(DeleteBehavior.SetNull);
+        // builder.HasOne(x => x.User)
+        //     .WithOne(x => x.Student)
+        //     .HasForeignKey<Student>(x => x.UserId)
+        //     .OnDelete(DeleteBehavior.SetNull);
     }
 }
