@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="VTBDU.CorePlatform.Domain/VTBDU.CorePlatform.Domain.csproj" />
   <Project Path="VTBDU.CorePlatform.Infrastructure/VTBDU.CorePlatform.Infrastructure.csproj" />
-  <Project Path="VTBDU.CorePlatfrorm.API/VTBDU.CorePlatfrorm.API.csproj" />
+  <Project Path="VTBDU.CorePlatfrorm.API/VTBDU.CorePlatform.API.csproj" Id="f653b1ad-4471-21df-23d2-c99d186e5391" />
 </Solution>
